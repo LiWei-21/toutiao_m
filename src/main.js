@@ -9,6 +9,8 @@ import 'vant/lib/index.css'
 
 import './styles/index.less'
 
+import 'amfe-flexible'
+
 // 挂在启用Vant
 Vue.use(Vant)
 
