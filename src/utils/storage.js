@@ -1,9 +1,9 @@
 // 获取本机储存
 
 export const getItem = name => {
-  const data = window.localStorage.getItem(name)
+  var data = window.localStorage.getItem(name)
   try {
-    JSON.parse(data)
+    data = JSON.parse(data)
     return data
   } catch (err) {
     return data
@@ -13,7 +13,7 @@ export const getItem = name => {
 // 将信息保存到本机
 
 export const setItem = (name, value) => {
-  if (typeof name === 'object') {
+  if (typeof value === 'object') {
     value = JSON.stringify(value)
     window.localStorage.setItem(name, value)
   }

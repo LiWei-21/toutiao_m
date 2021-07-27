@@ -1,7 +1,9 @@
 <template>
   <div class="login-container">
     <!-- 导航栏 -->
-    <van-nav-bar title="登入/注册" />
+    <van-nav-bar title="登入/注册">
+      <van-icon slot="left" name="cross" @click="$router.back()" />
+    </van-nav-bar>
     <!-- 登录表单 -->
     <!--
       表单验证：
@@ -110,6 +112,8 @@ export default {
         // 将登录令牌token保存到Vuex中 发起mutations
         this.$store.commit('setToken', data.data)
         console.log(data)
+        // 转到个人中心
+        this.$router.back()
       } catch (err) {
         // 发送失败，关闭倒计时
         this.isCountDown = false

@@ -10,6 +10,8 @@ import 'vant/lib/index.css'
 import './styles/index.less'
 
 import 'amfe-flexible'
+// 导入dayjs dayjs怎么处理时间
+import './utils/dayjs'
 
 // 挂在启用Vant
 Vue.use(Vant)
