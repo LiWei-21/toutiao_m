@@ -88,6 +88,9 @@ export default {
           this.finished = true
         }
       } catch (err) {
+        if (err.response.status === 401) {
+          this.$toast('登入验证过去，请重新登入')
+        }
         this.error = true
         this.loading = false
       }
@@ -109,6 +112,7 @@ export default {
         // }
         const { results } = data.data
         this.articleList.unshift(...results)
+        console.log(data)
         this.refreshing = false
         this.refreshSuccessText = '刷新成功'
       } catch (err) {

@@ -42,3 +42,59 @@ export const getUserChannels = () => {
     url: `/app/v1_0/user/channels`
   })
 }
+// 添加关注用户
+
+export const addFollowed = target => {
+  return request({
+    method: 'POST',
+    url: `/app/v1_0/user/followings`,
+    data: { target }
+  })
+}
+
+// 取消关注用户
+
+export const deleteFollowed = target => {
+  return request({
+    method: 'DELETE',
+    url: `/app/v1_0/user/followings/${target}`
+  })
+}
+
+// 添加收藏
+
+export const addCollect = target => {
+  return request({
+    method: 'POST',
+    url: `/app/v1_0/article/collections`,
+    data: { target }
+  })
+}
+
+// 取消收藏
+
+export const deleteCollect = target => {
+  return request({
+    method: 'DELETE',
+    url: `/app/v1_0/article/collections/${target}`
+  })
+}
+
+// 添加点赞
+
+export const addLike = target => {
+  return request({
+    method: 'POST',
+    url: `/app/v1_0/article/likings`,
+    data: { target }
+  })
+}
+
+// 取消点赞
+
+export const deleteLike = target => {
+  return request({
+    method: 'DELETE',
+    url: `/app/v1_0/article/likings/${target}`
+  })
+}
