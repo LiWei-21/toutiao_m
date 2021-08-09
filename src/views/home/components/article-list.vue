@@ -89,7 +89,7 @@ export default {
         }
       } catch (err) {
         if (err.response.status === 401) {
-          this.$toast('登入验证过去，请重新登入')
+          this.$toast('登入验证过期，请重新登入')
         }
         this.error = true
         this.loading = false

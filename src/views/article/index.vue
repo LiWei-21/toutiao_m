@@ -4,7 +4,7 @@
     <van-nav-bar
       class="page-nav-bar"
       left-arrow
-      title="黑马头条"
+      title="菜鸡头条"
       @click-left="$router.back()"
     ></van-nav-bar>
     <!-- /导航栏 -->
