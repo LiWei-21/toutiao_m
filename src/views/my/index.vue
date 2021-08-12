@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="data-stats">
-        <div class="data-item">
+        <div class="data-item" @click="toUser">
           <span class="count">{{ userInfo.art_count }}</span>
           <span class="text">头条</span>
         </div>
@@ -23,7 +23,18 @@
           <span class="count">{{ userInfo.fans_count }}</span>
           <span class="text">粉丝</span>
         </div>
-        <div class="data-item">
+        <div
+          class="data-item"
+          @click="
+            $router.push({
+              name: 'hiscoll',
+              params: {
+                userId: userInfo.id,
+                t: 'coll'
+              }
+            })
+          "
+        >
           <span class="count">{{ userInfo.like_count }}</span>
           <span class="text">收藏</span>
         </div>
@@ -38,11 +49,33 @@
       </div>
     </div>
     <van-grid class="grid-nav" :column-num="2" clickable>
-      <van-grid-item class="grid-item">
+      <van-grid-item
+        class="grid-item"
+        @click="
+          $router.push({
+            name: 'hiscoll',
+            params: {
+              userId: userInfo.id,
+              t: 'coll'
+            }
+          })
+        "
+      >
         <i slot="icon" class="toutian toutiao-shoucang"></i>
         <span slot="text" class="text">收藏</span>
       </van-grid-item>
-      <van-grid-item class="grid-item">
+      <van-grid-item
+        class="grid-item"
+        @click="
+          $router.push({
+            name: 'hiscoll',
+            params: {
+              userId: userInfo.id,
+              t: 'his'
+            }
+          })
+        "
+      >
         <i slot="icon" class="toutian toutiao-lishi"></i>
         <span slot="text" class="text">历史</span>
       </van-grid-item>
@@ -63,6 +96,7 @@
 import { mapState } from 'vuex'
 import { userInfo } from '@/api/User.js'
 // import { removeItem } from '@/utils/storage.js'
+
 export default {
   name: 'MyIndex',
   data() {
@@ -70,6 +104,7 @@ export default {
       userInfo: {}
     }
   },
+  components: {},
   computed: {
     ...mapState(['token'])
   },
@@ -106,6 +141,14 @@ export default {
           this.$toast.fail('获取信息失败')
         }
       }
+    },
+    toUser() {
+      this.$router.push({
+        name: 'user',
+        params: {
+          userId: this.userInfo.id
+        }
+      })
     }
   },
   created() {

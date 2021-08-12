@@ -8,7 +8,7 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('@/views/login')
+      component: () => import('@/views/login/Index.vue')
     },
     {
       path: '/',
@@ -57,6 +57,12 @@ export default new Router({
       path: '/user/:userId',
       name: 'user',
       component: () => import('./views/user'),
+      props: true
+    },
+    {
+      path: '/hc/:userId&:t',
+      name: 'hiscoll',
+      component: () => import('./views/my/components/histories-collection.vue'),
       props: true
     }
   ]
