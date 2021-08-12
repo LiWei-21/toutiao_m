@@ -69,8 +69,8 @@ export default {
   data() {
     return {
       User: {
-        mobile: '',
-        code: ''
+        mobile: '13911111111',
+        code: '246810'
       },
       rules: {
         userNmae: [

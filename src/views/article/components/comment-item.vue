@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { addCommentsLikes, deleteCommentsLikes } from '../../../api/comment'
+import { addCommentsLikes, deleteCommentsLikes } from '@/api/comment'
 export default {
   name: 'CommentItem',
   props: {

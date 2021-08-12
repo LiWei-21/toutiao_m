@@ -20,3 +20,18 @@ export const getArticleById = articleId => {
     url: `/app/v1_0/articles/${articleId}`
   })
 }
+
+/**
+ * 获取用户文章列表
+ */
+
+export const getArticlesByUserId = params => {
+  return request({
+    method: 'GET',
+    url: `/app/v1_0/users/${params.id}/articles`,
+    params: {
+      page: params.page,
+      per_page: params.per_page
+    }
+  })
+}

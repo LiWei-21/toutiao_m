@@ -30,8 +30,11 @@
             round
             fit="cover"
             :src="articles.aut_photo"
+            @click="toUser"
           />
-          <div slot="title" class="user-name">{{ articles.aut_name }}</div>
+          <div slot="title" class="user-name" @click="toUser">
+            {{ articles.aut_name }}
+          </div>
           <div slot="label" class="publish-date">
             {{ articles.pubdate | relativeTime }}
           </div>
@@ -253,6 +256,14 @@ export default {
       this.currentComment = comment
       console.log(comment)
       this.isReplyShow = true
+    },
+    toUser() {
+      this.$router.push({
+        name: 'user',
+        params: {
+          userId: this.articles.aut_id
+        }
+      })
     }
   }
 }

@@ -126,3 +126,12 @@ export const updateUserPhoto = data => {
     data
   })
 }
+
+// 获取指定用户信息
+
+export const getUserInfo = target => {
+  return request({
+    method: 'GET',
+    url: `/app/v1_0/users/${target}`
+  })
+}
